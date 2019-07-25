@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>视界大不同</title>
+	
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
+	
+	<!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+	
+	<!-- Owl Carousel Assets -->
+    <link href="owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="owl-carousel/owl.theme.css" rel="stylesheet">
+	
+	<!-- Custom Fonts -->
+    <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css"  type="text/css">
+	
+	<!-- jQuery -->
+	<script src="js/jquery-2.1.1.js"></script>
+	
+	<!-- Core JavaScript Files -->  	 
+    <script src="js/bootstrap.min.js"></script>
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<header>
+	<!--Top-->
+	<nav id="top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-6">
+					<strong id = "name"></strong>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<ul class="list-inline top-link link">
+						<li><a href="index.html"><i class="fa fa-home"></i> 首页</a></li>
+						<li><a href="person.html"><i class="fa fa-comments"></i> 个人主页</a></li>
+						<!--<li><a href="liveindex.html"><i class="fa fa-comments"></i> 信息</a></li>
+						<li><a href="#"><i class="fa fa-question-circle"></i> 问题与解答</a></li>-->
+						<li><a class="tuichu"><i class="icon iconfont icon-084tuichu"></i>退出</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	
+	<!--Navigation-->
+    
+	
+	
+</header>
+<!-- Header -->
+	
+	<!-- /////////////////////////////////////////Content -->
+    <div id="page-content" class="index-page">
+	
+		<div class="container">
+			<div class="row">
+				<div class="featured">
+					<div class="main-vid">
+						<div class="col-md-6">
+							<div class="zoom-container" id="videoTopOne">
+								
+							</div>
+						</div>
+					</div>
+					<div class="sub-vid" id="videoTopTwoToFive">
+						
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div id="main-content" class="col-md-8">
+					
+					<div class="box">
+						<div class="box-header">
+							<h2><i class="fa fa-play-circle-o"></i> 正在直播</h2>
+							
+						</div>
+						<a href="table/addLive.html" class="fa fa-play-circle-o" style="color: black;">我要直播</a>
+						<div class="box-content">
+							<div class="row" id="live">
+							</div>
+						</div>
+						<div class="line"></div>
+					</div>
+					
+					
+					<div class="box">
+						<div class="box-header">
+							<h2><i class="fa fa-globe"></i> Featured Videos</h2>
+						</div>
+						<div class="box-content">
+							<div class="row" id="recomment">
+							</div>
+						</div>
+						<div class="line"></div>
+					</div>
+					<div class="box">
+						<div class="box-header">
+							<h2><i class="fa fa-play-circle-o"></i> Random Videos</h2>
+						</div>
+						<div class="box-content">
+							<div class="row" id="rand">
+							</div>
+						</div>
+						<div class="line"></div>
+					</div>
+					<div class="box">
+						<div class="box-header">
+							<h2><i class="fa fa-vimeo-square"></i> New Videos</h2>
+						</div>
+						<div class="box-content">
+							<div class="row" id="latest">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="sidebar" class="col-md-4">
+					<!---- Start Widget ---->
+					<div class="widget wid-follow">
+						<!--<div class="heading"><h4><i class="fa fa-users"></i> Follow Us</h4></div>-->
+						<div class="content">
+							<!--<ul class="list-inline">
+								<li>
+									<a href="facebook.com/">
+										<div class="box-facebook">
+											<span class="fa fa-facebook fa-2x icon"></span>
+											<span>1250</span>
+											<span>Fans</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="facebook.com/">
+										<div class="box-twitter">
+											<span class="fa fa-twitter fa-2x icon"></span>
+											<span>1250</span>
+											<span>Fans</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="facebook.com/">
+										<div class="box-google">
+											<span class="fa fa-google-plus fa-2x icon"></span>
+											<span>1250</span>
+											<span>Fans</span>
+										</div>
+									</a>
+								</li>
+							</ul>-->
+							<img src="img/banner.jpg" />
+						</div>
+						<div class="line"></div>
+					</div>
+					<!---- Start Widget ---->
+					<div class="widget wid-tags">
+						<div class="heading"><h4><i class="fa fa-tags"></i> Tag</h4></div>
+						<div class="content" id="tag">
+							<ul class="list-inline">
+								<li><a onclick="getCategory('动作')">动作 ,</a></li>
+								<li><a onclick="getCategory('科幻')">科幻 ,</a></li>
+								<li><a onclick="getCategory('动画')">动画 ,</a></li>
+								<li><a onclick="getCategory('改编')">改编 ,</a></li>
+								<li><a onclick="getCategory('美剧')">美剧 ,</a></li>
+							</ul>
+						</div>
+						<div class="line"></div>
+					</div>
+					<!---- Start Widget ---->
+					<div class="widget wid-post">
+						<div class="heading"><h4><i class="fa fa-globe"></i> Category</h4></div>
+						<div class="content" id="category">
+							<div class="post wrap-vid">
+								<div class="zoom-container">
+									<div class="zoom-caption">
+										<span>Video's Tag</span>
+										<a href="#">
+											<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+										</a>
+										<p>Video's Name</p>
+									</div>
+									<img src="img/7.jpg" />
+								</div>
+								<div class="wrapper">
+									<h5 class="vid-name"><a href="#">Video's Name</a></h5>
+									<div class="info">
+										<h6>By <a href="#">Kelvin</a></h6>
+										<span><i class="fa fa-calendar"></i>25/3/2015</span> 
+										<span><i class="fa fa-heart"></i>1,200</span>
+									</div>
+								</div>
+							</div>
+							<div class="post wrap-vid">
+								<div class="zoom-container">
+											<div class="zoom-caption">
+												<span>Video's Tag</span>
+												<a href="#">
+													<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+												</a>
+												<p>Video's Name</p>
+											</div>
+											<img src="img/8.jpg" />
+										</div>
+								<div class="wrapper">
+									<h5 class="vid-name"><a href="#">Video's Name</a></h5>
+									<div class="info">
+										<h6>By <a href="#">Kelvin</a></h6>
+										<span><i class="fa fa-calendar"></i>25/3/2015</span> 
+										<span><i class="fa fa-heart"></i>1,200</span>
+									</div>
+								</div>
+							</div>
+							<div class="post wrap-vid">
+								<div class="zoom-container">
+									<div class="zoom-caption">
+										<span>Video's Tag</span>
+										<a href="#">
+											<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+										</a>
+										<p>Video's Name</p>
+									</div>
+									<img src="img/9.jpg" />
+								</div>
+								<div class="wrapper">
+									<h5 class="vid-name"><a href="#">Video's Name</a></h5>
+									<div class="info">
+										<h6>By <a href="#">Kelvin</a></h6>
+										<span><i class="fa fa-calendar"></i>25/3/2015</span> 
+										<span><i class="fa fa-heart"></i>1,200</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="line"></div>
+					</div>
+					<!---- Start Widget ---->
+					<!--<div class="widget wid-post">
+						<div class="heading"><h4><i class="fa fa-comments"></i> Comment</h4></div>
+						<div class="content" id="comment">
+						</div>
+						<div class="line"></div>
+					</div>-->
+					<div class="widget wid-banner">
+						<img src="img/banner-2.jpg" />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<footer>
+		
+		<!--<div class="wrap-footer">
+			<div class="container">
+				<div class="row"> 
+					<aside class="col-footer col-md-3">
+						<h2 class="footer-title">About Us</h2>
+						<div class="textwidget">Aenean feugiat in ante et blandit. Vestibulum posuere molestie risus, ac interdum magna porta non. Pellentesque rutrum fringilla elementum. Curabitur tincidunt porta lorem vitae accumsan. <br> <br> 
+						Aenean feugiat in ante et blandit. Vestibulum posuere molestie risus, ac interdum magna porta non. Pellentesque rutrum fringilla elementum. Curabitur tincidunt porta lorem vitae accumsan.</div>
+					</aside> 
+					<aside class="col-footer col-md-3 widget_recent_entries">
+						<h2 class="footer-title">Recent Posts</h2>
+						<ul>
+							<li><a href="#">MOST VISITED COUNTRIES</a></li>
+							<li><a href="#">5 PLACES THAT MAKE A GREAT HOLIDAY</a></li>
+							<li><a href="#">PEBBLE TIME STEEL IS ON TRACK TO SHIP IN JULY</a></li>
+							<li><a href="#">STARTUP COMPANY&#8217;S CO-FOUNDER TALKS ON HIS NEW PRODUCT</a></li>
+						</ul>
+					</aside>
+					<aside class="col-footer col-md-3">
+						<h2 class="footer-title">NEWS LETTER</h2>
+						If you want to receive our latest news send directly to your email, please leave your email address bellow. Subscription is free and you can cancel anytime.
+						<form action="#" method="post">
+							<input type="text" name="your-name" value="" size="40" placeholder="Your Email" />
+							<input type="submit" value="SUBSCRIBE" class="btn btn-3" />
+						</form>
+					</aside>
+					<aside class="col-footer col-md-3 wptt_TwitterTweets">
+						<h2 class="footer-title">Twitter</h2>
+						<ul class="fetched_tweets light">
+							<li class="tweets_avatar">
+								<div class="tweet_wrap">
+									<div class="wdtf-user-card ltr">
+										<div class="clear"></div>
+									</div>
+									<div class="tweet_data"> Check out 'NewsTube - Magazine Blog &amp; Video' on <a href="#" target="_blank" rel="nofollow">#EnvatoMarket</a> <a href="#" target="_blank" rel="nofollow">#themeforest</a></div> <br/>
+									<div class="clear"></div>
+									<div class="times"> <em> <a href="#" target="_blank" title="Follow cactusthemes on Twitter [Opens new window]"> 2 months ago </a> </em></div>
+									<div class="clear"></div>
+								</div>
+								<div class="clear"></div>
+							</li>
+							<li class="tweets_avatar">
+								<div class="tweet_wrap">
+									<div class="wdtf-user-card ltr"><div class="clear"></div></div>
+									<div class="tweet_data"> Our latest theme 'Nano - Simple Magazine WordPress Theme' on <a href="#" target="_blank" rel="nofollow">#EnvatoMarket</a></div> <br/>
+									<div class="clear"></div>
+									<div class="times"> <em> <a href="#" target="_blank" title="Follow cactusthemes on Twitter [Opens new window]"> 5 months ago </a> </em></div>
+									<div class="clear"></div>
+								</div>
+								<div class="clear"></div>
+							</li>
+						</ul>
+					</aside>
+				</div>
+			</div>
+		</div>-->
+		<!--<div class="bottom-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 copyright">
+						<span>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></span>
+					</div>
+					<div class="col-md-6 col-sm-6 link">
+						<div class="menu-footer-menu-container">
+							<ul id="menu-footer-menu" class="menu list-inline">
+								<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+								<li><a href="liveindex.html"><i class="fa fa-comments"></i> Contact</a></li>
+								<li><a href="#"><i class="fa fa-question-circle"></i> FAQ</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+	</footer>
+	<!-- Footer -->
+	
+	<!-- JS -->
+	<script src="owl-carousel/owl.carousel.js"></script>
+	<script src="js/page/statistics.js"></script>
+	<script src="js/config/urlConfig.js"></script>
+	<script src="js/index.js"></script>
+	<script type="text/javascript">
+			$(".tuichu").click(function() {
+				$.ajax({
+					url: urlconfig.exit,
+					async: true,
+					success: function(data) {
+
+					},
+					error: function(err) {
+						layer.closeAll('loading');
+						layer.msg('网络异常', {
+							icon: 5
+						});
+						console.log(err)
+					}
+				});
+				window.location.href = "login.html";
+			})
+		</script>
+</body>
+</html>

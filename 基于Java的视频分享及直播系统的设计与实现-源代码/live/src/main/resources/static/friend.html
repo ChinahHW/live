@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>个人主页</title>
+<meta name="keywords" content="" />
+<meta name="description" content="个人主页面" />
+<link href="css/base.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+<!-- jQuery -->
+	<script src="js/jquery-2.1.1.js"></script>
+	
+	<!-- Core JavaScript Files -->  	 
+    <script src="js/bootstrap.min.js"></script>
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="banner">
+  <section class="box">
+    <ul class="texts">
+      <p>这是网站的一段话</p>
+      <p>感谢您光临本网站</p>
+      <p>您的满意是对我们最大的支持</p>
+    </ul>
+    <div style="position: absolute;left: 1115px;top: 200px;" id="guanzhu"><button style='width: 80px;' onclick=addFriend()>关注</button></div>
+    <div class="avatar" id="head"><!--<a href="#" style="background-image:url('img/photos.jpg')"><span>姓名</span></a>--> </div>
+  </section>
+</div>
+<article>
+  <h2 class="title_tj">
+    <p>收藏的<span>视频</span></p>
+  </h2>
+  <div class="bloglist left" id="collection">
+  </div>
+  <aside class="right">
+    <div class="weather"><iframe width="250" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&num=1"></iframe></div>
+    <div class="news">
+    <h3>
+      <p>观看<span>历史</span></p>
+    </h3>
+    <ul class="rank" id="history">
+    </ul>
+    </table>
+</article>
+<footer>
+</footer>
+<script src="js/silder.js"></script>
+<script src="js/config/urlConfig.js"></script>
+<script src="js/page/friend.js"></script>
+</body>
+</html>

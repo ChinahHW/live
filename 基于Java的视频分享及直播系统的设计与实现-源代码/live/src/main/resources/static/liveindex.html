@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Video.js 7.0</title>
+	<link href="css/video-js.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="frame/layui/css/layui.css">
+<link rel="stylesheet" href="frame/static/css/style.css">
+	<script src="js/jquery-2.1.1.js"></script>
+	  
+	<style>
+body {
+	background-color: #191919
+}
+.m {
+	width: 660px;
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+}
+.barrage {
+	color: black;
+	font-size: 30px;
+	position: absolute;
+	left: 250px;
+	z-index:999;
+}
+.show {
+	
+	margin-top: 100px;
+	width: 150px;
+	height: 600px;
+}
+.write {
+	
+	font-size: 16px;
+	position: absolute;
+	top: 730px;
+}
+</style>
+<script  type="text/javascript">
+      function barrage(id) {
+          var timer=null;
+          var div1=document.getElementById(id);
+          clearInterval(timer);//如果多次点击，那么会有多个定时器同时工作，移动速度不是设置的10,会有叠加效果，故应该清除
+          timer= setInterval(function () {
+        //获取元素的当前位置
+        var current = div1.offsetLeft;
+        var target = 1180
+        //移动的步数
+        var step = 10;
+        step = target > current ? step : -step;
+        current += step;
+        if (Math.abs(current - target) > Math.abs(step)) {
+          div1.style.left = current + "px";
+        } else {
+          		clearInterval(div1.timeId);
+          		div1.style.left = target + "px";
+}
+       
+        if(current >= 1170){
+        	document.getElementById(id).style.display="none";
+        }
+      		}, 100);
+      		
+      		
+         }
+      
+    </script>
+	</head>
+
+	<body>
+		<div>
+			<button onclick="del()" id="closeLive" style="display: none;">结束直播</button>
+			<button onclick="change()" id="changeLive" style="display: none;">修改信息</button>
+		</div>
+		<div id="barrages">
+			<!--<div id="barrage" class="barrage"  style="top: 150px;">这是一个div用来显示弹幕</div>-->
+		</div>
+		
+		<div>
+			
+			<div class="showBarrage" style="float: left;margin-right: 60px ;">
+				<textarea id="show" class="show">用来显示和发送弹幕</textarea>
+				
+				
+			</div>
+			<div class="write">
+				<input id="write" style="width:150px; margin-right: 10px;display: block;"/><button id="sendBarrage" style="margin-left: 40px;margin-top: 10px;" onclick="sendBarrage($('#write').val())">点击发送</button>
+			</div>
+			
+			<div class="m" style="float: left;">
+      			<video
+
+    				id="my-player"
+
+    				class="video-js"
+
+    				controls
+
+    				preload="auto"
+
+    			data-setup='{}'>
+				</video>
+			
+			</div>
+		<div id="updateData" style="display: none;">
+				<form class="layui-form">
+					<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+						<label class="layui-form-label">直播标题</label>
+						<div class="layui-input-block">
+							<textarea style="width: 400px;" name="liveTitle" id="liveTitle" class="layui-textarea"></textarea>
+						</div>
+					</div>
+					<div class="layui-form-item layui-form-text" style="margin-top:15px; display: none;">
+						<label class="layui-form-label">直播用户</label>
+						<div class="layui-input-block">
+							<input style="width: 400px;" name="liveName" id="liveName" class="layui-textarea"></input>
+						</div>
+					</div>
+					<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+						<label class="layui-form-label">直播地址</label>
+						<div class="layui-input-block">
+							<textarea style="width: 400px;" name="liveAddress" id="liveAddress" class="layui-textarea"></textarea>
+						</div>
+					</div>
+					
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<button class="layui-btn met1" lay-submit type="submit" lay-filter="updateSubmit">保存修改</button>
+						</div>
+					</div>
+				</form>
+			</div>
+    
+      <script src="js/video.min.js"></script> 
+      <script type="text/javascript" src="js/jquery-2.1.1.js" ></script>
+      <script src="http://vjs.zencdn.net/5.19/lang/zh-CN.js"></script>
+      <script src="frame/layer/layer.js"></script>
+	  <script src="frame/layui/layui.js"></script>
+      <script src="js/config/urlConfig.js"></script>
+	  <script type="text/javascript" src="js/page/live.js" ></script>
+	  <script>
+	  	$("#liveName").val(localStorage.getItem('yonhuming'));
+	  </script>
+    </div>
+</body>
+</html>

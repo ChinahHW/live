@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>个人主页</title>
+<meta name="keywords" content="" />
+<meta name="description" content="个人主页面" />
+<link href="css/base.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+<link rel="stylesheet" href="frame/layui/css/layui.css">
+<link rel="stylesheet" href="frame/static/css/style.css">
+<!-- jQuery -->
+	<script src="js/jquery-2.1.1.js"></script>
+	
+	<!-- Core JavaScript Files -->  	 
+    <script src="js/bootstrap.min.js"></script>
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+	<div id="updateData" style="display: none;">
+			<form class="layui-form" id="uploadForm">
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					
+					<div class="layui-form-item" style="display: none;">
+					<label class="layui-form-label">Id</label>
+					<div class="layui-input-block">
+						<input style="width: 300px;" type="text" name="id" id="id" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				</div>
+				
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					
+					<div class="layui-form-item">
+					<label class="layui-form-label">姓名</label>
+					<div class="layui-input-block">
+						<input style="width: 300px;" type="text" name="name" id="name" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				</div>
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					<label class="layui-form-label">性别</label>
+					<div style="width: 300px;" class="layui-input-block">
+						<select style="width: 300px;" name="sex" id="sex" lay-filter="aihao" lay-search="">
+							<option value="">请选择</option>
+							<option value="男">男</option>
+							<option value="女">女</option>
+						</select>
+					</div>
+				</div>
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					<label class="layui-form-label">头像</label>
+					<div style="width: 300px;" class="layui-input-block">
+						<input type="file" name="picture" id="picture" onchange="preImg(this.id,'photo')"/>
+					</div>
+				</div>
+				
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					<label class="layui-form-label">预览</label>
+					<div style="width: 300px;" class="layui-input-block">
+						<img id="photo" src="" width="300px" height="300px" style="display: block;" />
+					</div>
+				</div>
+				
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					
+					<div class="layui-form-item">
+					<label class="layui-form-label">密码</label>
+					<div class="layui-input-block">
+						<input style="width: 300px;" type="text" name="password" id="password" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				</div>
+				
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					
+					<div class="layui-form-item">
+					<label class="layui-form-label">确认密码</label>
+					<div class="layui-input-block">
+						<input style="width: 300px;" type="text" name="spassword" id="spassword" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				</div>
+				
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button class="layui-btn met1" lay-submit type="submit" lay-filter="updateSubmit" onclick="submitFunction('uploadForm')">保存修改</button>
+					</div>
+				</div>
+			</form>
+			
+	</div>
+	
+	
+	<div id="uploadData" style="display: none;">
+			<form class="layui-form" id="uploadForm2">
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					
+					<div class="layui-form-item" style="display: none;">
+					<label class="layui-form-label">Id</label>
+					<div class="layui-input-block">
+						<input style="width: 300px;" type="text" name="id" id="id" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				</div>
+				
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					
+					<div class="layui-form-item">
+					<label class="layui-form-label">标题</label>
+					<div class="layui-input-block">
+						<input style="width: 300px;" type="text" name="name" id="name" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				</div>
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					<label class="layui-form-label">内容简介</label>
+					<div style="width: 300px;" class="layui-input-block">
+						<textarea style="width: 400px;" name="content" id="content" class="layui-textarea"></textarea>
+					</div>
+				</div>
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					<label class="layui-form-label">头像</label>
+					<div style="width: 300px;" class="layui-input-block">
+						<input type="file" name="videopicture" id="videopicture" onchange="preImg(this.id,'photo2')"/>
+					</div>
+				</div>
+				
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					<label class="layui-form-label">预览</label>
+					<div style="width: 300px;" class="layui-input-block">
+						<img id="photo2" src="" width="300px" height="300px" style="display: block;" />
+					</div>
+				</div>
+				
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					<label class="layui-form-label">视频</label>
+					<div style="width: 300px;" class="layui-input-block">
+						<input type="file" name="url" id="url"/>
+					</div>
+				</div>
+				
+				<div class="layui-form-item layui-form-text" style="margin-top:15px;">
+					
+					<div class="layui-form-item">
+					<label class="layui-form-label">类别</label>
+					<div class="layui-input-block">
+						<select style="width: 300px;" name="clazz" id="clazz" lay-filter="clazz" lay-search="">
+							<option value="">请选择</option>
+							<option value="动作">动作</option>
+							<option value="动画">动画</option>
+							<option value="动作">科幻</option>
+							<option value="动画">喜剧</option>
+						</select>
+					</div>
+				</div>
+				</div>
+				
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button class="layui-btn met1" lay-submit type="submit" lay-filter="uploadSubmit" onclick="submitVideo('uploadForm2')">上传视频</button>
+						
+					</div>
+				</div>
+			</form>
+			
+	</div>
+	
+<div class="banner">
+  <section class="box">
+    <ul class="texts">
+      <p>这是网站的一段话</p>
+      <p>感谢您光临本网站</p>
+      <p>您的满意是对我们最大的支持</p>
+    </ul>
+    <div style="position: absolute;left: 1115px;top: 200px;" id="guanzhu"><button style='width: 80px;' onclick="change()" id="changeUser">修改信息</button></div>
+    <div style="position: absolute;left: 1115px;top: 230px;" id="shangchuan"><button style='width: 80px;' onclick="uploadVideo()" id="uploadVideo">上传视频</button></div>
+    <div class="avatar" id="head"><!--<a href="#" style="background-image:url('img/photos.jpg')"><span>姓名</span></a>--> </div>
+  </section>
+</div>
+<article>
+  <h2 class="title_tj">
+    <p>收藏的<span>视频</span></p>
+  </h2>
+  <div class="bloglist left" id="collection">
+  </div>
+  
+  <aside class="right">
+    <div class="weather"><iframe width="250" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&num=1"></iframe></div>
+    
+    <div class="news">
+    <h3>
+      <p>观看<span>历史</span></p>
+    </h3>
+    <ul class="rank" id="history">
+    </ul>
+    <h3 class="ph">
+      <p>我的<span>好友</span></p>
+    </h3>
+    <ul id="friend">
+      
+    </ul>
+    </table>
+</article>
+		
+<footer>
+</footer>
+<script src="js/silder.js"></script>
+<script src="frame/layer/layer.js"></script>
+<script src="frame/layui/layui.js"></script>
+<script src="js/config/urlConfig.js"></script>
+<script src="js/page/person.js"></script>
+<script type="text/javascript">    
+	function submitFunction(id) {
+            //这里唯一需要注意的就是这个form-add的id
+            var formData = new FormData($("#"+id)[0]);
+            $.ajax({
+            //接口地址
+       		url: urlconfig.fileUpload ,
+        	type: 'POST',
+        	data: formData,
+        	async: false,
+        	cache: false,
+        	contentType: false,
+        	processData: false,
+        	success: function (data) {
+            //成功的回调
+            if(data.code == 300){
+
+            }
+
+        },
+        error: function (returndata) {
+           //请求异常的回调
+           // modals.warn("网络访问失败，请稍后重试!");
+        }
+    });
+}
+	
+	
+	function submitVideo(id) {
+            //这里唯一需要注意的就是这个form-add的id
+            var formData = new FormData($("#"+id)[0]);
+            $.ajax({
+            //接口地址
+       		url: urlconfig.videoUpload ,
+        	type: 'POST',
+        	data: formData,
+        	async: false,
+        	cache: false,
+        	contentType: false,
+        	processData: false,
+        	success: function (data) {
+            //成功的回调
+            if(data.code == 300){
+
+            }
+
+        },
+        error: function (returndata) {
+           //请求异常的回调
+           // modals.warn("网络访问失败，请稍后重试!");
+        }
+    });
+}
+</script>
+<script>
+	$("#id").val(localStorage.getItem('userId'));
+	
+	
+</script>
+</body>
+</html>
